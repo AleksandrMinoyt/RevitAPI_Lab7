@@ -1,0 +1,31 @@
+﻿<Window x:Class="RevitAPI_CreateList.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RevitAPI_CreateList"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Title="Сщздание листов">
+    <StackPanel>
+        <Label Content="Выберите формат, вид и нажмите 'Создать'" Margin="5" />
+        <Label Content="Формат:" Margin="5" />
+        <ComboBox ItemsSource="{Binding ListsTypes}" 
+                  SelectedValue="{Binding SelectedListsType}" 
+                  DisplayMemberPath="Name" 
+                  Margin="5"/>
+        <Label Content="Вид:" Margin="5" />
+        <ComboBox ItemsSource="{Binding Views}" 
+                  SelectedValue="{Binding SelectedView}" 
+                  DisplayMemberPath="Name" 
+                  Margin="5"/>
+        <Label Content="Автор: "/>
+        <TextBox Text="{Binding Autor}"
+                 Margin="5"/>
+        <Label Content="Количество: "/>
+        <TextBox Text="{Binding ListsCount}"
+                 Margin="5"/>
+
+        <Button Content="Создать" Command="{Binding CreateLists}" Margin="5"/>
+    </StackPanel>
+</Window>
